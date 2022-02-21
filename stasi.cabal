@@ -1,0 +1,55 @@
+cabal-version:      2.4
+name:               stasi
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+synopsis: A static site generator for biological data sets
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+license:            GPL-3.0-or-later
+license-file:       LICENSE
+author:             James Collier
+maintainer:         james.collier@vib.be
+
+-- A copyright notice.
+copyright: (c) 2021-2022 VIB
+-- category:
+extra-source-files: CHANGELOG.md
+
+executable stasi
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    default-extensions: OverloadedStrings
+                        DeriveAnyClass
+                        DeriveGeneric
+    -- other-extensions:
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -Wincomplete-uni-patterns -Wincomplete-record-updates -Wpartial-fields -Wmissing-home-modules -Widentities -Wredundant-constraints
+    build-depends:
+        base ^>=4.14 && <5
+      , aeson
+      , bytestring >= 0.10 && < 0.12
+      , cassava
+      , containers
+      , directory
+      , filepath
+      , lens
+      , lens-aeson
+      , mustache
+      , shake
+      , slick
+      , text
+      , time
+      , unordered-containers
+      , vector
+    hs-source-dirs:   app
+    default-language: Haskell2010
